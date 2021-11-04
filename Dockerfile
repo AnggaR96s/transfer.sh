@@ -20,6 +20,6 @@ LABEL maintainer="Andrea Spacca <andrea.spacca@gmail.com>"
 COPY --from=build  /go/bin/transfersh /go/bin/transfersh
 COPY --from=build /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-ENTRYPOINT ["/go/bin/transfersh", "--listener", ":80", "--provider", "local", "--basedir", "/tmp/"]
+ENTRYPOINT ["/go/bin/transfersh", "--listener", ":80", "--provider", "local", "--basedir", "/tmp/", "max-upload-size", "100000000"]
 
 EXPOSE 80
